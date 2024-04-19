@@ -1,0 +1,65 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<div class="row login-page">
+    <div class="col-md-4">
+        <section>
+            <form id="account" method="post">
+                <h1>Log in</h1>
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                    <label asp-for="Input.Email" class="form-label">Email</label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
+                    <label asp-for="Input.Password" class="form-label">Password</label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="checkbox mb-3">
+                    <label asp-for="Input.RememberMe" class="form-label">
+                        <input class="form-check-input" asp-for="Input.RememberMe" />
+                        @Html.DisplayNameFor(m => m.Input.RememberMe)
+                    </label>
+                </div>
+                <div>
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
+                </div>
+                <div>
+                    <p>
+                        <a id="forgot-password" asp-page="./ForgotPassword"><i class="bi bi-shield-lock"></i>Forgot your password?</a>
+                    </p>
+@*                     <p>
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                    </p>
+                    <p>
+                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
+                    </p> *@
+                </div>
+            </form>
+        </section>
+       
+    </div>
+    
+</div>
+<div>
+    <h1>All the Roles with passward to login every role have there own task to do and admin controll all the task and can look what going on so login with admin to see every thing</h1>
+
+    <h2>lakshay@gmail.com</h2>
+    <h2>qualityinsp@outlook.com</h2>
+    <h2>engineer@outlook.com</h2>
+    <h2>opmanager@outlook.com</h2>
+    <h2>procurement@outlook.com</h2>
+    <h2>admin@outlook.com</h2>
+
+    <h1> Passward : Pa55w@rd</h1>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
